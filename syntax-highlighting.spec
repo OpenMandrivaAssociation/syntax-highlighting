@@ -6,7 +6,7 @@
 Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
-Version:	5.29.0
+Version:	5.30.0
 License:	MIT
 Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
@@ -23,7 +23,7 @@ BuildRequires:	ninja
 %description
 Library for syntax highlighting
 
-%files
+%files -f syntaxhighlighting5_qt.lang
 %{_bindir}/kate-syntax-highlighter
 %{_sysconfdir}/xdg/org_kde_ksyntaxhighlighting.categories
 
@@ -64,3 +64,8 @@ Development files for applications that use %{name}.
 
 %install
 %ninja_install -C build
+ls %{buildroot}%{_datadir}/locale/*/LC_MESSAGES/*.qm |while read r; do
+	F="$(echo $r |sed -e 's,%{buildroot},,')"
+	L="$(echo $F |cut -d/ -f5)"
+	echo "%%lang($L) $F" >>syntaxhighlighting5_qt.lang
+done
