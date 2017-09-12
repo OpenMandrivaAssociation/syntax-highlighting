@@ -17,11 +17,11 @@ BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Network)
 BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
+BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(ECM)
-BuildRequires:	ninja
 
 %description
-Library for syntax highlighting
+Library for syntax highlighting.
 
 %files -f syntaxhighlighting5_qt.lang
 %{_bindir}/kate-syntax-highlighter
@@ -33,7 +33,7 @@ Group:		System/Libraries
 Requires:	%{name} = %{EVRD}
 
 %description -n %{libname}
-Syntax highlighting library
+Syntax highlighting library.
 
 %files -n %{libname}
 %{_libdir}/libKF5SyntaxHighlighting.so.%{major}*
