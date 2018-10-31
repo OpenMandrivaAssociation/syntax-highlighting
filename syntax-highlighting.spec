@@ -10,7 +10,7 @@ Version:	5.51.0
 License:	MIT
 Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
-Release:	1
+Release:	2
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Network)
