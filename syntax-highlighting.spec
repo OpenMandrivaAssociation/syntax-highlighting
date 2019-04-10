@@ -6,11 +6,11 @@
 Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
-Version:	5.56.0
+Version:	5.57.0
 License:	MIT
 Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
-Release:	3
+Release:	1
 BuildRequires:	cmake(Qt5Core)
 BuildRequires:	cmake(Qt5Gui)
 BuildRequires:	cmake(Qt5Network)
@@ -18,6 +18,8 @@ BuildRequires:	cmake(Qt5Widgets)
 BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(ECM)
+# For QCH format docs
+BuildRequires: qt5-assistant
 
 %description
 Library for syntax highlighting.
@@ -52,6 +54,17 @@ Development files for applications that use %{name}.
 %{_libdir}/libKF5SyntaxHighlighting.so
 %{_libdir}/cmake/KF5SyntaxHighlighting
 %{_libdir}/qt5/mkspecs/modules/qt_KSyntaxHighlighting.pri
+
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devname} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
 
 %prep
 %setup -q
