@@ -19,7 +19,8 @@ BuildRequires:	cmake(Qt5Test)
 BuildRequires:	cmake(Qt5XmlPatterns)
 BuildRequires:	cmake(ECM)
 # For QCH format docs
-BuildRequires: qt5-assistant
+BuildRequires:	doxygen
+BuildRequires:	qt5-assistant
 
 %description
 Library for syntax highlighting.
