@@ -6,7 +6,7 @@
 Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
-Version:	5.72.0
+Version:	5.73.0
 Release:	1
 License:	MIT
 Url:		https://kde.org/
@@ -28,7 +28,7 @@ Library for syntax highlighting.
 
 %files -f syntaxhighlighting5_qt.lang
 %{_bindir}/kate-syntax-highlighter
-%{_datadir}/qlogging-categories5/ksyntaxhighlighting.categories
+%{_datadir}/qlogging-categories5/ksyntaxhighlighting.*categories
 
 %package -n %{libname}
 Summary:	Syntax highlighting library
