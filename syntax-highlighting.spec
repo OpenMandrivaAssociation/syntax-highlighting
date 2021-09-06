@@ -6,7 +6,7 @@
 Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
-Version:	5.85.0
+Version:	5.86.0
 Release:	1
 License:	MIT
 Url:		https://kde.org/
@@ -40,6 +40,7 @@ Syntax highlighting library.
 
 %files -n %{libname}
 %{_libdir}/libKF5SyntaxHighlighting.so.%{major}*
+%{_libdir}/qt5/qml/org/kde/syntaxhighlighting
 
 %package -n %{devname}
 Summary:	Syntax highlighting development files
