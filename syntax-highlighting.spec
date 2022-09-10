@@ -6,7 +6,7 @@
 Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
-Version:	5.97.0
+Version:	5.98.0
 Release:	1
 License:	MIT
 Url:		https://kde.org/
