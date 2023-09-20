@@ -7,7 +7,7 @@ Summary:	Library for syntax highlighting
 Name:		syntax-highlighting
 Group:		Development/C++
 Version:	5.110.0
-Release:	1
+Release:	2
 License:	MIT
 Url:		https://kde.org/
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
@@ -22,14 +22,12 @@ BuildRequires:	cmake(ECM)
 # For QCH format docs
 BuildRequires:	doxygen
 BuildRequires:	qt5-assistant
-Requires:	kate-syntax-highlighter
 
 %description
 Library for syntax highlighting.
 
 %files -f syntaxhighlighting5_qt.lang
-# We get this from KF6 now
-#%{_bindir}/kate-syntax-highlighter
+%{_bindir}/kate-syntax-highlighter
 %{_datadir}/qlogging-categories5/ksyntaxhighlighting.*categories
 
 %package -n %{libname}
@@ -84,5 +82,3 @@ ls %{buildroot}%{_datadir}/locale/*/LC_MESSAGES/*.qm |while read r; do
 	L="$(echo $F |cut -d/ -f5)"
 	echo "%%lang($L) $F" >>syntaxhighlighting5_qt.lang
 done
-# We get this from KF6 now
-rm %{buildroot}%{_bindir}/kate-syntax-highlighter
